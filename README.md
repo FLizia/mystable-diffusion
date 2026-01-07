@@ -79,7 +79,7 @@ conda activate ldm
 - 问题2：`invisible-watermark` 安装失败 → 解决细节：Linux环境下需先安装依赖库pywavelets并指定兼容版本，再安装水印库，无需额外安装C++编译环境：`pip install pywavelets==1.4.1 --index-url https://pypi.tuna.tsinghua.edu.cn/simple ` `pip install invisible-watermark==0.2.0 --index-url https://pypi.tuna.tsinghua.edu.cn/simple`
 - 问题3：CUDA版本不匹配，提示 `CUDA error: invalid device function` → 解决细节：该报错核心原因是PyTorch的CUDA版本与系统安装的CUDA版本不一致（系统安装的是CUDA 11.4，但初始安装的PyTorch默认适配其他CUDA版本）。首先通过 `nvcc -V`（需配置CUDA环境变量）确认系统CUDA版本，再卸载原有PyTorch，重新安装严格匹配CUDA 11.4的版本：
   `pip uninstall torch torchvision ` `pip install torch==1.12.1+cu114 torchvision==0.13.1+cu114 --extra-index-url https://download.pytorch.org/whl/cu114` 安装完成后通过环境验证脚本中的CUDA可用性检查，确认无报错。
-- 问题4：需要下载taming-transformers压缩包。打开 taming-transformers 官方 GitHub 仓库：https://github.com/CompVis/taming-transformers 点击页面右上角的「Code」按钮，在下拉菜单中选择「Download ZIP」，即可下载完整的仓库压缩包；下载完成后解压，即可得到包含所有源码、配置、模型相关文件的文件夹。
+- 问题4：需要下载taming-transformers压缩包。打开 taming-transformers 官方 GitHub 仓库：https://github.com/CompVis/taming-transformers 点击页面右上角的「Code」按钮，在下拉菜单中选择「Download ZIP」，即可下载完整的仓库压缩包，放到src文件夹下；下载完成后解压，即可得到包含所有源码、配置、模型相关文件的文件夹。
 
 ### Step 4：预训练权重的获取与配置
 
