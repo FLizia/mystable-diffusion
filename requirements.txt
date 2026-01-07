@@ -1,25 +1,40 @@
-# 核心框架（兼容CUDA 11.8+，匹配SD v1.4）
-torch==2.0.1
-torchvision==0.15.2
-torchaudio==2.0.2
-
-# Hugging Face核心依赖（文本编码、扩散模型工具）
-transformers==4.28.1
-diffusers==0.19.3
-accelerate==0.18.0
-
-# 配置文件&数值计算
+# ========== 数据集/基础依赖 ==========
+academictorrents==2.3.3
+numpy==1.24.4
+scipy==1.16.3
+PyYAML==6.0.3
 omegaconf==2.3.0
-numpy==1.24.3
-einops==0.6.1
+packaging==25.0
+typing_extensions==4.15.0
+setuptools==75.1.0
+Requests==2.32.5
 
-# 图像处理（img2img必需）
-Pillow==9.5.0
-opencv-python==4.8.0.76
+# ========== 图像处理核心 ==========
+albumentations==2.0.8
+opencv_python==4.12.0.88
+Pillow==12.1.0
+imageio==2.37.2
+kornia==0.7.3
 
-# 隐水印（SD默认功能，避免报错）
-invisible-watermark==0.2.0
+# ========== PyTorch/训练推理核心 ==========
+torch==1.12.1+cu113
+torchvision==0.13.1+cu113
+einops==0.8.1
+pytorch_lightning==1.8.6
 
-# 其他辅助依赖（模型张量操作、文件处理）
-tqdm==4.65.0
-pyyaml==6.0.1
+# ========== 模型/功能依赖 ==========
+transformers==4.26.0
+clip_anytorch==2.6.0
+invisible_watermark==0.2.0
+tqdm==4.67.1
+
+# ========== 辅助工具 ==========
+ipython==8.12.3
+ipywidgets==8.1.8
+pudb==2025.1.5
+streamlit==1.52.2
+more_itertools==10.8.0
+natsort==8.4.0
+protobuf==6.33.2
+skimage==0.0
+
