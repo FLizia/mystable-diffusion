@@ -1,0 +1,300 @@
+{
+  "model_info": {
+    "model_name": "Stable Diffusion v1.4",
+    "model_path": "models/ldm/stable-diffusion-v1/sd-v1-4.ckpt",
+    "config_path": "configs/stable-diffusion/v1-inference.yaml",
+    "framework": "PyTorch",
+    "cuda_version": "11.8",
+    "python_version": "3.8.18"
+  },
+  "txt2img_metrics": [
+    {
+      "theme": "astronaut",
+      "version": "basic",
+      "prompt": "a photograph of an astronaut riding a horse",
+      "negative_prompt": "",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/0_basic",
+      "inference_time": 12.5  
+    },
+    {
+      "theme": "astronaut",
+      "version": "fine_tuned",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/1_fine",
+      "inference_time": 13.2
+    },
+    {
+      "theme": "astronaut",
+      "version": "scale_5",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/3_fine_scale/scale_5",
+      "inference_time": 12.8
+    },
+    {
+      "theme": "astronaut",
+      "version": "scale_10",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 10,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/3_fine_scale/scale_10",
+      "inference_time": 13.5
+    },
+    {
+      "theme": "astronaut",
+      "version": "sampler_dpm_solver",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "dpm_solver",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/4_fine_sampler_dpm_solver",
+      "inference_time": 10.3
+    },
+    {
+      "theme": "astronaut",
+      "version": "batch_generation",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 3,
+      "num_iter": 2,
+      "total_generated": 6,
+      "output_path": "results/txt2img/astronaut/6_batch_generation",
+      "average_inference_time": 12.1
+    },
+    {
+      "theme": "cat",
+      "version": "basic",
+      "prompt": "a cat",
+      "negative_prompt": "",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 256,
+        "width": 256
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/cat/0_basic",
+      "inference_time": 4.8
+    },
+    {
+      "theme": "cat",
+      "version": "fine_tuned",
+      "prompt": "a photograph of a fat and cute orange cat lying on a sofa, realistic photograph, 8k UHD, high resolution, sharp focus, detailed fur texture, natural lighting, warm colors",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 1234,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/cat/1_fine",
+      "inference_time": 12.7
+    },
+    {
+      "theme": "girl",
+      "version": "basic",
+      "prompt": "a beautiful girl",
+      "negative_prompt": "",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/girl/0_basic",
+      "inference_time": 12.3
+    },
+    {
+      "theme": "girl",
+      "version": "anime_style",
+      "prompt": "an anime girl with long black hair, blue eyes, wearing a white dress, masterpiece, best quality, 4k, vibrant colors, soft shading, studio ghibli style, clean background",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, realistic, photograph, 3d",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 8,
+      "seed": 5678,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/girl/1_fine",
+      "inference_time": 13.1
+    }
+  ],
+  "img2img_metrics": [
+    {
+      "theme": "landscape",
+      "version": "realistic",
+      "prompt": "a realistic landscape with green mountains, a blue lake, white clouds, vibrant colors, 8k UHD, cinematic lighting, detailed grass, clear water, professional photography",
+      "negative_prompt": "blurry, cartoon, anime, low res, ugly, flat colors, no texture",
+      "init_image_path": "assets/img2img/inputs/landscape-sketch.png",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "strength": 0.7,
+      "seed": 1234,
+      "num_samples": 2,
+      "output_path": "results/img2img/landscape",
+      "average_inference_time": 14.2
+    },
+    {
+      "theme": "mountain",
+      "version": "fantasy",
+      "prompt": "A fantasy landscape, trending on artstation",
+      "negative_prompt": "",
+      "init_image_path": "assets/img2img/inputs/mountain.jpg",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "strength": 0.8,
+      "seed": 42,
+      "num_samples": 1,
+      "output_path": "results/img2img/mountain",
+      "inference_time": 13.8
+    },
+    {
+      "theme": "normal_photo",
+      "version": "oil_painting",
+      "prompt": "oil painting, impressionism style, thick brush strokes, vibrant colors, museum quality, monet style, soft lighting",
+      "negative_prompt": "blurry, realistic, photograph, digital art, smooth, low res",
+      "init_image_path": "assets/img2img/inputs/normal-photo.png",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 8,
+      "strength": 0.6,
+      "seed": 9012,
+      "num_samples": 2,
+      "output_path": "results/img2img/normal_photo/oil_painting",
+      "average_inference_time": 14.5
+    },
+    {
+      "theme": "normal_photo",
+      "version": "ghibli_style",
+      "prompt": "Studio Ghibli style, anime scene, soft colors, whimsical atmosphere, detailed background, clean line art, heartwarming",
+      "negative_prompt": "blurry, realistic, photograph, 3d, messy lines, low res",
+      "init_image_path": "assets/img2img/inputs/normal-photo.png",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 8,
+      "strength": 0.7,
+      "seed": 3456,
+      "num_samples": 2,
+      "output_path": "results/img2img/normal_photo/ghibli-style",
+      "average_inference_time": 14.1
+    },
+    {
+      "theme": "old_photo_restore",
+      "version": "colorized",
+      "prompt": "colorized old photo, vibrant natural colors, sharp focus, restored facial details, smooth skin, film grain, 1950s style, high resolution",
+      "negative_prompt": "black and white, blurry, scratched, faded, low res, deformed",
+      "init_image_path": "assets/img2img/inputs/old-photo.png",
+      "sampler": "plms",
+      "ddim_steps": 60,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 6,
+      "strength": 0.4,
+      "seed": 5678,
+      "num_samples": 2,
+      "output_path": "results/img2img/old_photo_restore",
+      "average_inference_time": 15.3
+    }
+  ],
+  "performance_summary": {
+    "total_txt2img_samples": 15,
+    "total_img2img_samples": 9,
+    "default_resolution": "512x512",
+    "default_sampler": "plms",
+    "default_ddim_steps": 50,
+    "average_inference_time_512x512": 12.9,
+    "supported_samplers": ["plms", "dpm_solver"],
+    "supported_tasks": ["text-to-image", "image-to-image", "style transfer", "old photo restoration", "batch generation"]
+  }
+}

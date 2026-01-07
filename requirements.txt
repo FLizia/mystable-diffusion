@@ -1,0 +1,25 @@
+# 核心框架（兼容CUDA 11.8+，匹配SD v1.4）
+torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2
+
+# Hugging Face核心依赖（文本编码、扩散模型工具）
+transformers==4.28.1
+diffusers==0.19.3
+accelerate==0.18.0
+
+# 配置文件&数值计算
+omegaconf==2.3.0
+numpy==1.24.3
+einops==0.6.1
+
+# 图像处理（img2img必需）
+Pillow==9.5.0
+opencv-python==4.8.0.76
+
+# 隐水印（SD默认功能，避免报错）
+invisible-watermark==0.2.0
+
+# 其他辅助依赖（模型张量操作、文件处理）
+tqdm==4.65.0
+pyyaml==6.0.1
