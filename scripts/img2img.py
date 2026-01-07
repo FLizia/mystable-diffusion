@@ -68,6 +68,15 @@ def main():
         help="the prompt to render"
     )
 
+    # 新增：反向提示词命令行参数（运行时可指定）
+    parser.add_argument(
+        "--negative_prompt",
+        type=str,
+        nargs="?",
+        default="",  # 默认空字符串（不排除任何内容）
+        help="the negative prompt (what to exclude from the generated image)"
+    )
+
     parser.add_argument(
         "--init-img",
         type=str,
@@ -162,6 +171,20 @@ def main():
         default=0.75,
         help="strength for noising/unnoising. 1.0 corresponds to full destruction of information in init image",
     )
+
+    # 新增2：添加 --H 和 --W 参数（图片尺寸）
+    parser.add_argument(
+        "--H",
+        type=int,
+        default=512,
+        help="image height, in pixel space"
+    )
+    parser.add_argument(
+        "--W",
+        type=int,
+        default=512,
+        help="image width, in pixel space"
+    )
     parser.add_argument(
         "--from-file",
         type=str,
@@ -250,7 +273,8 @@ def main():
                     for prompts in tqdm(data, desc="data"):
                         uc = None
                         if opt.scale != 1.0:
-                            uc = model.get_learned_conditioning(batch_size * [""])
+                            # 替换固定的""为opt.negative_prompt（运行时传入的反向提示词）
+                            uc = model.get_learned_conditioning(batch_size * [opt.negative_prompt])
                         if isinstance(prompts, tuple):
                             prompts = list(prompts)
                         c = model.get_learned_conditioning(prompts)

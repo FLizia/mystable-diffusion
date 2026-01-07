@@ -19,14 +19,14 @@ from ldm.models.diffusion.ddim import DDIMSampler
 from ldm.models.diffusion.plms import PLMSSampler
 from ldm.models.diffusion.dpm_solver import DPMSolverSampler
 
-from diffusers.pipelines.stable_diffusion.safety_checker import StableDiffusionSafetyChecker
-from transformers import AutoFeatureExtractor
+# from diffusers.pipelines.stable_diffusion.safety_checker import StableDiffusionSafetyChecker
+# from transformers import AutoFeatureExtractor
 
 
 # load safety model
 safety_model_id = "CompVis/stable-diffusion-safety-checker"
-safety_feature_extractor = AutoFeatureExtractor.from_pretrained(safety_model_id)
-safety_checker = StableDiffusionSafetyChecker.from_pretrained(safety_model_id)
+# safety_feature_extractor = AutoFeatureExtractor.from_pretrained(safety_model_id)
+# safety_checker = StableDiffusionSafetyChecker.from_pretrained(safety_model_id)
 
 
 def chunk(it, size):
@@ -85,14 +85,20 @@ def load_replacement(x):
         return x
 
 
+# def check_safety(x_image):
+#     safety_checker_input = safety_feature_extractor(numpy_to_pil(x_image), return_tensors="pt")
+#     x_checked_image, has_nsfw_concept = safety_checker(images=x_image, clip_input=safety_checker_input.pixel_values)
+#     assert x_checked_image.shape[0] == len(has_nsfw_concept)
+#     for i in range(len(has_nsfw_concept)):
+#         if has_nsfw_concept[i]:
+#             x_checked_image[i] = load_replacement(x_checked_image[i])
+#     return x_checked_image, has_nsfw_concept
+
+# 新函数（直接返回原图像，禁用安全检查）
 def check_safety(x_image):
-    safety_checker_input = safety_feature_extractor(numpy_to_pil(x_image), return_tensors="pt")
-    x_checked_image, has_nsfw_concept = safety_checker(images=x_image, clip_input=safety_checker_input.pixel_values)
-    assert x_checked_image.shape[0] == len(has_nsfw_concept)
-    for i in range(len(has_nsfw_concept)):
-        if has_nsfw_concept[i]:
-            x_checked_image[i] = load_replacement(x_checked_image[i])
-    return x_checked_image, has_nsfw_concept
+    # 禁用安全检查，返回原始图像 + 全False的违规标记（无违规）
+    has_nsfw_concept = [False] * x_image.shape[0]
+    return x_image, has_nsfw_concept
 
 
 def main():
@@ -105,6 +111,16 @@ def main():
         default="a painting of a virus monster playing guitar",
         help="the prompt to render"
     )
+
+    # 新增：反向提示词命令行参数（运行时可指定）
+    parser.add_argument(
+        "--negative_prompt",
+        type=str,
+        nargs="?",
+        default="",  # 默认空字符串（不排除任何内容）
+        help="the negative prompt (what to exclude from the generated image)"
+    )
+
     parser.add_argument(
         "--outdir",
         type=str,
@@ -295,7 +311,8 @@ def main():
                     for prompts in tqdm(data, desc="data"):
                         uc = None
                         if opt.scale != 1.0:
-                            uc = model.get_learned_conditioning(batch_size * [""])
+                            # 替换固定的""为opt.negative_prompt（运行时传入的反向提示词）
+                            uc = model.get_learned_conditioning(batch_size * [opt.negative_prompt])
                         if isinstance(prompts, tuple):
                             prompts = list(prompts)
                         c = model.get_learned_conditioning(prompts)
