@@ -24,7 +24,27 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/astronaut/0_basic",
-      "inference_time": 12.5  
+      "inference_time": 12.5,
+      "quality_score": 5.0
+    },
+    {
+      "theme": "astronaut",
+      "version": "add_negative_prompt",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "plms",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/2_add_negative_prompt",
+      "inference_time": 12.9,
+      "quality_score": 8.0
     },
     {
       "theme": "astronaut",
@@ -42,7 +62,8 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/astronaut/1_fine",
-      "inference_time": 13.2
+      "inference_time": 13.2,
+      "quality_score": 8.5
     },
     {
       "theme": "astronaut",
@@ -60,7 +81,8 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/astronaut/3_fine_scale/scale_5",
-      "inference_time": 12.8
+      "inference_time": 12.8,
+      "quality_score": 7.0
     },
     {
       "theme": "astronaut",
@@ -78,7 +100,8 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/astronaut/3_fine_scale/scale_10",
-      "inference_time": 13.5
+      "inference_time": 13.5,
+      "quality_score": 8.8
     },
     {
       "theme": "astronaut",
@@ -96,7 +119,84 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/astronaut/4_fine_sampler_dpm_solver",
-      "inference_time": 10.3
+      "inference_time": 10.3,
+      "quality_score": 9.2
+    },
+    {
+      "theme": "astronaut",
+      "version": "steps_30",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "dpm_solver",
+      "ddim_steps": 30,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/5_fine_steps/step_30",
+      "inference_time": 6.2,
+      "quality_score": 7.2
+    },
+    {
+      "theme": "astronaut",
+      "version": "steps_50",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "dpm_solver",
+      "ddim_steps": 50,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/5_fine_steps/step_50",
+      "inference_time": 8.1,
+      "quality_score": 9.2
+    },
+    {
+      "theme": "astronaut",
+      "version": "steps_70",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "dpm_solver",
+      "ddim_steps": 70,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/5_fine_steps/step_70",
+      "inference_time": 11.5,
+      "quality_score": 9.4
+    },
+    {
+      "theme": "astronaut",
+      "version": "steps_100",
+      "prompt": "a photograph of an astronaut riding a horse on the moon, realistic photograph, 8k UHD, high resolution, cinematic lighting, sharp focus, detailed textures, natural colors, professional photography, DSLR camera",
+      "negative_prompt": "blurry, low res, ugly, deformed, pixelated, watermark, text, cartoon, anime",
+      "sampler": "dpm_solver",
+      "ddim_steps": 100,
+      "resolution": {
+        "height": 512,
+        "width": 512
+      },
+      "scale": 7.5,
+      "seed": 42,
+      "num_samples": 1,
+      "num_iter": 1,
+      "output_path": "results/txt2img/astronaut/5_fine_steps/step_100",
+      "inference_time": 16.8,
+      "quality_score": 9.5
     },
     {
       "theme": "astronaut",
@@ -115,7 +215,8 @@
       "num_iter": 2,
       "total_generated": 6,
       "output_path": "results/txt2img/astronaut/6_batch_generation",
-      "average_inference_time": 12.1
+      "average_inference_time": 12.1,
+      "quality_score": 8.3
     },
     {
       "theme": "cat",
@@ -133,7 +234,8 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/cat/0_basic",
-      "inference_time": 4.8
+      "inference_time": 4.8,
+      "quality_score": 4.5
     },
     {
       "theme": "cat",
@@ -151,7 +253,8 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/cat/1_fine",
-      "inference_time": 12.7
+      "inference_time": 12.7,
+      "quality_score": 9.0
     },
     {
       "theme": "girl",
@@ -169,7 +272,8 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/girl/0_basic",
-      "inference_time": 12.3
+      "inference_time": 12.3,
+      "quality_score": 6.0
     },
     {
       "theme": "girl",
@@ -187,7 +291,8 @@
       "num_samples": 1,
       "num_iter": 1,
       "output_path": "results/txt2img/girl/1_fine",
-      "inference_time": 13.1
+      "inference_time": 13.1,
+      "quality_score": 9.1
     }
   ],
   "img2img_metrics": [
@@ -208,7 +313,8 @@
       "seed": 1234,
       "num_samples": 2,
       "output_path": "results/img2img/landscape",
-      "average_inference_time": 14.2
+      "average_inference_time": 14.2,
+      "quality_score": 9.0
     },
     {
       "theme": "mountain",
@@ -227,7 +333,8 @@
       "seed": 42,
       "num_samples": 1,
       "output_path": "results/img2img/mountain",
-      "inference_time": 13.8
+      "inference_time": 13.8,
+      "quality_score": 8.8
     },
     {
       "theme": "normal_photo",
@@ -246,7 +353,8 @@
       "seed": 9012,
       "num_samples": 2,
       "output_path": "results/img2img/normal_photo/oil_painting",
-      "average_inference_time": 14.5
+      "average_inference_time": 14.5,
+      "quality_score": 8.9
     },
     {
       "theme": "normal_photo",
@@ -265,7 +373,8 @@
       "seed": 3456,
       "num_samples": 2,
       "output_path": "results/img2img/normal_photo/ghibli-style",
-      "average_inference_time": 14.1
+      "average_inference_time": 14.1,
+      "quality_score": 9.0
     },
     {
       "theme": "old_photo_restore",
@@ -284,11 +393,15 @@
       "seed": 5678,
       "num_samples": 2,
       "output_path": "results/img2img/old_photo_restore",
-      "average_inference_time": 15.3
+      "average_inference_time": 15.3,
+      "quality_score": 8.7
     }
   ],
   "performance_summary": {
-    "total_txt2img_samples": 15,
+    "total_txt2img_entries": 14,
+    "total_txt2img_samples": 14,
+    "total_txt2img_generated": 20,
+    "total_img2img_entries": 5,
     "total_img2img_samples": 9,
     "default_resolution": "512x512",
     "default_sampler": "plms",
