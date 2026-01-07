@@ -126,7 +126,7 @@ def main():
         type=str,
         nargs="?",
         help="dir to write results to",
-        default="outputs/txt2img-samples"
+        default="results/txt2img-samples"
     )
     parser.add_argument(
         "--skip_grid",
@@ -254,7 +254,7 @@ def main():
         print("Falling back to LAION 400M model...")
         opt.config = "configs/latent-diffusion/txt2img-1p4B-eval.yaml"
         opt.ckpt = "models/ldm/text2img-large/model.ckpt"
-        opt.outdir = "outputs/txt2img-samples-laion400m"
+        opt.outdir = "results/txt2img-samples-laion400m"
 
     seed_everything(opt.seed)
 
